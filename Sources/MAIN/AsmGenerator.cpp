@@ -1,21 +1,27 @@
 #include "AsmGenerator.h"
 
-AsmGenerator::AsmGenerator() {
-	if ((asmLib = LoadLibrary("Anaglyph_AsmDll.dll")) != NULL) {
+AsmGenerator::AsmGenerator()
+{
+	if ((asmLib = LoadLibrary("Anaglyph_AsmDll.dll")) != NULL)
+	{
 		generate = (asmFunc)GetProcAddress(asmLib, "generate");
 
-		if (generate == NULL) {
+		if (generate == NULL)
+		{
 			cout << "Asm proc \"generate\" not found!" << endl;
 			system("pause");
 			exit(1);
 		}
-	} else {
+	}
+	else
+	{
 		cout << "Asm lib \"Anaglyph_AsmDll\" not found!" << endl;
 		system("pause");
 		exit(1);
 	}
 }
 
-AsmGenerator::~AsmGenerator() {
+AsmGenerator::~AsmGenerator()
+{
 	FreeLibrary(asmLib);
 }

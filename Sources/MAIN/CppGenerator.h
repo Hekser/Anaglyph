@@ -1,7 +1,8 @@
 #pragma once
 #include "AppView.h"
 
-class CppGenerator {
+class CppGenerator
+{
 public:
 	CppGenerator();
 	~CppGenerator();

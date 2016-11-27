@@ -3,7 +3,8 @@
 #include <Commdlg.h>
 #include <tchar.h>
 
-class OpenFileDialog {
+class OpenFileDialog
+{
 public:
 	OpenFileDialog();
 	~OpenFileDialog();

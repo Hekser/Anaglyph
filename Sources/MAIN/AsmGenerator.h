@@ -1,7 +1,8 @@
 #pragma once
 #include "AppView.h"
 
-class AsmGenerator {
+class AsmGenerator
+{
 public:
 	AsmGenerator();
 	~AsmGenerator();

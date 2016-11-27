@@ -8,9 +8,11 @@
 using namespace sf;
 using namespace std;
 
-class AppView {
+class AppView
+{
 public:
-	enum ButtonID {
+	enum ButtonID
+	{
 		NONE,
 		bLEFT,
 		bRIGHT,
@@ -20,13 +22,15 @@ public:
 	};
 	AppView();
 	~AppView();
-	unsigned getConcurentThreadsSupported();
+	unsigned getThreadsNumber();
 	unsigned getScreenWidth();
 	unsigned getScreenHeight();
 	void setIcon(RenderWindow &);
 	void draw(RenderWindow &);
 	AppView::ButtonID buttonAction(const Vector2i, bool);
 	void setPic(string, AppView::ButtonID);
+	void setString(String);
+	bool areInputImagesEqual();
 	void showTime(Int32);
 private:
 	const unsigned concurentThreadsSupported;
@@ -37,8 +41,19 @@ private:
 	Image icon;
 	Font font;
 	Text textThreads;
+	Text textEnterThreads;
+	Text textThreadsNumber;
 	Text textDll;
 	Text textTime;
+
+	const Vector2f textThreadsPosition;
+	const Vector2f textEnterThreadsPosition;
+	const Vector2f textThreadsNumberPosition;
+	const Vector2f textDllPosition;
+	const Vector2f textTimePosition;
+
+	const Vector2f threadsBoxSize;
+	const Vector2f threadsBoxPosition;
 
 	const Vector2f anaglyphSize;
 	const Vector2f anaglyphPosition;
@@ -65,6 +80,7 @@ private:
 
 	RectangleShape backgroundLeft;
 	RectangleShape backgroundRight;
+	RectangleShape threadsBox;
 	RectangleShape anaglyph;
 	RectangleShape leftPic;
 	RectangleShape rightPic;
@@ -91,4 +107,6 @@ private:
 	Texture buttonOnCPPTexture;
 
 	bool gateResultPic;
+private:
+	void setTextSize();
 };

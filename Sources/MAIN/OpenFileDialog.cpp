@@ -1,6 +1,7 @@
 #include "OpenFileDialog.h"
 
-OpenFileDialog::OpenFileDialog() {
+OpenFileDialog::OpenFileDialog()
+{
 	this->DefaultExtension = NULL;
 	this->FileName = new TCHAR[MAX_PATH];
 	this->Filter = "BitMap Files (*bmp)\0*.bmp\0";
@@ -11,12 +12,14 @@ OpenFileDialog::OpenFileDialog() {
 	this->Title = NULL;
 }
 
-OpenFileDialog::~OpenFileDialog() {
+OpenFileDialog::~OpenFileDialog()
+{
 	delete this->FileName;
 	this->FileName = NULL;
 }
 
-bool OpenFileDialog::ShowDialog() {
+bool OpenFileDialog::ShowDialog()
+{
 	OPENFILENAME ofn;
 
 	ZeroMemory(&ofn, sizeof(ofn));
@@ -35,13 +38,15 @@ bool OpenFileDialog::ShowDialog() {
 
 	GetOpenFileName(&ofn);
 
-	if (_tcslen(this->FileName) == 0) {
+	if (_tcslen(this->FileName) == 0)
+	{
 		return false;
 	}
 
 	return true;
 }
 
-TCHAR * OpenFileDialog::getFileName() {
+TCHAR * OpenFileDialog::getFileName()
+{
 	return this->FileName;
 }

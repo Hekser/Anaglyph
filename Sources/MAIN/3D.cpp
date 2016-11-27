@@ -1,6 +1,7 @@
 #include "Controller.h"
 
-int main() {
+int main()
+{
 	Controller *controller = new Controller();
 	controller->launch();
 	delete controller;

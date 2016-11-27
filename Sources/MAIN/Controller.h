@@ -5,7 +5,8 @@
 #include "OpenFileDialog.h"
 #include "BitMap.h"
 
-class Controller {
+class Controller
+{
 public:
 	Controller();
 	~Controller();
@@ -19,6 +20,6 @@ private:
 
 	BitMap *leftPic;
 	BitMap *rightPic;
-
+private:
 	string generate(unsigned, string, string, bool);
 };

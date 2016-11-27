@@ -4,7 +4,8 @@
 
 using namespace std;
 
-class BitMap {
+class BitMap
+{
 public:
 	BitMap(string);
 	~BitMap();
